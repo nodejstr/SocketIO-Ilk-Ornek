@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <script src="http://localhost:8888/socket.io/socket.io.js"></script>
+    </head>
+    <body style="background-color: #4b4040">
+        <p style="color: white">Socket.IO başlatıldı</p>
+        <p id="income-data" style="color: white"></p>
+        <script>
+                        var socket = io.connect('http://localhost:8888');
+                        console.log('salim');
+                        socket.on('news', function(data) {
+                            console.log(data);
+                            if(document.all){
+                                document.getElementById('income-data').innerText =JSON.stringify(data);
+                            } else{
+                                document.getElementById('income-data').textContent = JSON.stringify(data);
+                            }
+                            socket.emit('my other event', { my: 'data' });
+                        });
+        </script>
+    </body>
+</html>
+
+
+
