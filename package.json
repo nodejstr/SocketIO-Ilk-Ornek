@@ -4,8 +4,7 @@
   "private": true,
   "dependencies": {
    "express": "latest",
-   "socket.io":"latest",
-   "jade":"latest"
+   "socket.io":"latest"
   },
   "author": {
     "name": "Salim KAYABAŞI",
